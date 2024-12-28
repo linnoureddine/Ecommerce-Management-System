@@ -411,7 +411,7 @@ join Order_Details as OD On O.OrderID=OD.OrderID
 join Customer as C On O.CustomerID=C.CustomerID
 join Product as P On P.ProductID=OD.ProductID
 where C.CustomerID='202'
-group by C.Name, O.OrderID, O.ShippingAdress, O.DatePlaced, O.ShippingDate, O.Status, P.ProductName, OD.Quantity;
+group by C.Name, O.OrderID, O.ShippingAdress, O.DatePlaced, O.ShippingDate, O.Status, P.ProductName,Â OD.Quantity;
 
 --10 Customer wants to delete their order
 Update Orders
@@ -671,7 +671,7 @@ select Country, Count(CustomerID) AS 'Customer Count 'from Customer
 group by Country;
 
 --
---47 Display orders that include products with a rating above 4
+--47 Display orders that include products with a ratingÂ aboveÂ 4
 select O.OrderID, OD.ProductID, P.ProductName, P.Rating
 from Orders as O
 	join Order_Details as OD On O.OrderID=OD.OrderID
